@@ -6,6 +6,12 @@ import {
   Icon,
   Text,
   useColorModeValue,
+  TableContainer,
+  Table,
+  Tr,
+  Td,
+  Grid,
+  GridItem
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card.js";
@@ -59,7 +65,7 @@ export default function TotalSpent(props) {
               color={textColorSecondary}
               me='4px'
             />
-            This month
+            January 2022
           </Button>
           <Button
             ms='auto'
@@ -79,7 +85,7 @@ export default function TotalSpent(props) {
         </Flex>
       </Flex>
       <Flex w='100%' flexDirection={{ base: "column", lg: "row" }}>
-        <Flex flexDirection='column' me='20px' mt='28px'>
+        <Flex flexDirection='column' me='60px' mt='28px'>
           <Text
             color={textColor}
             fontSize='34px'
@@ -95,7 +101,7 @@ export default function TotalSpent(props) {
               fontWeight='500'
               mt='4px'
               me='12px'>
-              Total Spent
+              Net Earnings
             </Text>
             <Flex align='center'>
               <Icon as={RiArrowUpSFill} color='green.500' me='2px' mt='2px' />
@@ -103,14 +109,92 @@ export default function TotalSpent(props) {
                 +2.45%
               </Text>
             </Flex>
+           
           </Flex>
-
-          <Flex align='center'>
-            <Icon as={IoCheckmarkCircle} color='green.500' me='4px' />
-            <Text color='green.500' fontSize='md' fontWeight='700'>
-              On track
+          <Grid templateRows='repeat(2, 1fr)'  templateColumns='repeat(5, 1fr)'>
+            <GridItem colSpan={3}>
+              <Text
+              color={textColor}
+              fontSize='20px'
+              textAlign='start'
+              fontWeight='700'
+              lineHeight='100%'>
+              $17.5K
+              </Text>
+          <Flex align='center' mb='20px'>
+          <Text
+              color='secondaryGray.600'
+              fontSize='sm'
+              fontWeight='500'
+              mt='4px'
+              me='12px'>
+              YouTube
             </Text>
           </Flex>
+          </GridItem>
+            <GridItem colSpan={1}>
+              <Text
+              color={textColor}
+              fontSize='20px'
+              textAlign='start'
+              fontWeight='700'
+              lineHeight='100%'>
+              $5.3K
+              </Text>
+              <Flex align='center' mb='20px'>
+                <Text
+                    color='secondaryGray.600'
+                    fontSize='sm'
+                    fontWeight='500'
+                    mt='4px'
+                    me='12px'>
+                    Spotify
+                  </Text>
+              </Flex>
+            </GridItem>
+            <GridItem colSpan={3}>
+            <Text
+              color={textColor}
+              fontSize='20px'
+              textAlign='start'
+              fontWeight='700'
+              lineHeight='100%'>
+              $300.3
+              </Text>
+              <Flex align='center' mb='20px'>
+                <Text
+                    color='secondaryGray.600'
+                    fontSize='sm'
+                    fontWeight='500'
+                    mt='4px'
+                    me='12px'>
+                    TicTok
+                  </Text>
+              </Flex>
+            </GridItem>
+            <GridItem colSpan={1}>
+              <Text
+              color={textColor}
+              fontSize='20px'
+              textAlign='start'
+              fontWeight='700'
+              lineHeight='100%'>
+              $50.3
+              </Text>
+              <Flex align='center' mb='20px'>
+                <Text
+                    color='secondaryGray.600'
+                    fontSize='sm'
+                    fontWeight='500'
+                    mt='4px'
+                    me='12px'>
+                    Deezer
+                  </Text>
+              </Flex>
+            </GridItem>
+          </Grid>
+          
+          
         </Flex>
         <Box minH='260px' minW='75%' mt='auto'>
           <LineChart

@@ -61,7 +61,7 @@ export default function CheckTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Check Table
+          Top Assets
         </Text>
         <Menu />
       </Flex>
@@ -97,11 +97,11 @@ export default function CheckTable(props) {
                   if (cell.column.Header === "NAME") {
                     data = (
                       <Flex align='center'>
-                        <Checkbox
+                        {/*<Checkbox
                           defaultChecked={cell.value[1]}
                           colorScheme='brandScheme'
                           me='10px'
-                        />
+                    /> */}
                         <Text color={textColor} fontSize='sm' fontWeight='700'>
                           {cell.value[0]}
                         </Text>
@@ -119,13 +119,19 @@ export default function CheckTable(props) {
                         </Text>
                       </Flex>
                     );
-                  } else if (cell.column.Header === "QUANTITY") {
+                  } else if (cell.column.Header === "VIEWS") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
                         {cell.value}
                       </Text>
                     );
-                  } else if (cell.column.Header === "DATE") {
+                  } else if (cell.column.Header === "UPLOADED") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  } else if (cell.column.Header === "PLATFORM") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
                         {cell.value}

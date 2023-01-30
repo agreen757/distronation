@@ -1,5 +1,5 @@
 // Chakra imports
-import { Avatar, Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Text, useColorModeValue, Button } from "@chakra-ui/react";
 import Card from "components/card/Card.js";
 import React from "react";
 
@@ -62,6 +62,10 @@ export default function Banner(props) {
           </Text>
         </Flex>
       </Flex>
+      <br></br>
+      <Button variant='brand'>Update Password</Button>
+      <br></br>
+      <Button variant='brand'>Download Client Agreement</Button>
     </Card>
   );
 }

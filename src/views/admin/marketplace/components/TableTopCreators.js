@@ -6,6 +6,8 @@ import {
   Progress,
   Table,
   Tbody,
+  Link,
+  Icon,
   Td,
   Text,
   Th,
@@ -20,6 +22,7 @@ import {
   useSortBy,
   useTable,
 } from "react-table";
+import { MdCheckCircle, MdCancel, MdOutlineError } from "react-icons/md";
 
 function TopCreatorTable(props) {
   const { columnsData, tableData } = props;
@@ -36,7 +39,7 @@ function TopCreatorTable(props) {
     useSortBy,
     usePagination
   );
-
+  const brandColor = useColorModeValue("brand.500", "white");
   const { getTableProps, getTableBodyProps, headerGroups, page, prepareRow } =
     tableInstance;
 
@@ -49,7 +52,7 @@ function TopCreatorTable(props) {
         direction='column'
         w='100%'
         overflowX={{ sm: "scroll", lg: "hidden" }}>
-        <Flex
+        {/*<Flex
           align={{ sm: "flex-start", lg: "center" }}
           justify='space-between'
           w='100%'
@@ -61,9 +64,9 @@ function TopCreatorTable(props) {
             Top Creators
           </Text>
           <Button variant='action'>See all</Button>
-        </Flex>
+        </Flex> */}
         <Table {...getTableProps()} variant='simple' color='gray.500'>
-          <Thead>
+          {/*<Thead>
             {headerGroups.map((headerGroup, index) => (
               <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
                 {headerGroup.headers.map((column, index) => (
@@ -83,10 +86,150 @@ function TopCreatorTable(props) {
                 ))}
               </Tr>
             ))}
-          </Thead>
+          </Thead> */}
 
           <Tbody {...getTableBodyProps()}>
-            {page.map((row, index) => {
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               December 2022
+              </Link>
+              </Td>
+              <Td>$1,298.23</Td>
+              <Td>YouTube</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               December 2022
+              </Link>
+              </Td>
+              <Td>$138.23</Td>
+              <Td>Streaming</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               November 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>YouTube</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               November 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>Streaming</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               October 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>YouTube</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               October 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>Streaming</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               September 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>YouTube</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               September 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>Streaming</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               August 2022
+              </Link>
+              </Td>
+              <Td>$1,392.13</Td>
+              <Td>YouTube</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+            <Tr>
+              <Td>
+              <Link fontWeight='500' color={brandColor} href='#' fontSize='sm'>
+               August 2022
+              </Link>
+              </Td>
+              <Td>$392.13</Td>
+              <Td>Streaming</Td>
+              <Td>
+                <Icon w='24px'
+                          h='24px'
+                          me='5px' color={"green.500"} as={MdCheckCircle} /> 
+                 Paid</Td>
+            </Tr>
+         {/*   {page.map((row, index) => {
               prepareRow(row);
               return (
                 <Tr {...row.getRowProps()} key={index}>
@@ -142,7 +285,7 @@ function TopCreatorTable(props) {
                   })}
                 </Tr>
               );
-            })}
+            })} */}
           </Tbody>
         </Table>
       </Flex>

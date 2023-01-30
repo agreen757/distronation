@@ -20,10 +20,11 @@ import { SearchBar } from "components/navbar/searchBar/SearchBar";
 import { SidebarResponsive } from "components/sidebar/Sidebar";
 import PropTypes from "prop-types";
 import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
 // Assets
 import navImage from "assets/img/layout/Navbar.png";
 import { MdNotificationsNone, MdInfoOutline } from "react-icons/md";
-import { FaEthereum } from "react-icons/fa";
+import { FaEthereum,FaDollarSign,FaUpload } from "react-icons/fa";
 import routes from "routes.js";
 import { ThemeEditor } from "./ThemeEditor";
 export default function HeaderLinks(props) {
@@ -52,14 +53,11 @@ export default function HeaderLinks(props) {
       p='10px'
       borderRadius='30px'
       boxShadow={shadow}>
-      <SearchBar
-        mb={secondary ? { base: "10px", md: "unset" } : "unset"}
-        me='10px'
-        borderRadius='30px'
-      />
+      <Button variant='brand'>
+        Withdraw
+      </Button>
       <Flex
         bg={ethBg}
-        display={secondary ? "flex" : "none"}
         borderRadius='30px'
         ms='auto'
         p='6px'
@@ -73,7 +71,7 @@ export default function HeaderLinks(props) {
           w='29px'
           borderRadius='30px'
           me='7px'>
-          <Icon color={ethColor} w='9px' h='14px' as={FaEthereum} />
+          <Icon color={ethColor} w='9px' h='14px' as={FaDollarSign} />
         </Flex>
         <Text
           w='max-content'
@@ -84,12 +82,19 @@ export default function HeaderLinks(props) {
           1,924
           <Text as='span' display={{ base: "none", md: "unset" }}>
             {" "}
-            ETH
+            
           </Text>
         </Text>
       </Flex>
+      <Flex me='17px'>
+        <NavLink to='/admin/upload'>
+        <Button>
+        <Icon color={ethColor}  h='24px' as={FaUpload} />
+        </Button>
+        </NavLink>
+      </Flex>
       <SidebarResponsive routes={routes} />
-      <Menu>
+      {/*<Menu>
         <MenuButton p='0px'>
           <Icon
             mt='6px'
@@ -145,9 +150,9 @@ export default function HeaderLinks(props) {
             </MenuItem>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
 
-      <Menu>
+      {/*<Menu>
         <MenuButton p='0px'>
           <Icon
             mt='6px'
@@ -202,7 +207,7 @@ export default function HeaderLinks(props) {
             </Link>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
 
       <ThemeEditor navbarIcon={navbarIcon} /> 
 

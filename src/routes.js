@@ -7,12 +7,15 @@ import {
   MdHome,
   MdLock,
   MdOutlineShoppingCart,
+  MdMoney,
+  m
 } from "react-icons/md";
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
+import Upload from "views/admin/upload"
 import DataTables from "views/admin/dataTables";
 import RTL from "views/admin/rtl";
 
@@ -21,19 +24,19 @@ import SignInCentered from "views/auth/signIn";
 
 const routes = [
   {
-    name: "Main Dashboard",
+    name: "Streaming Revenue",
     layout: "/admin",
     path: "/default",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
   },
   {
-    name: "NFT Marketplace",
+    name: "Reporting",
     layout: "/admin",
-    path: "/nft-marketplace",
+    path: "/reporting",
     icon: (
       <Icon
-        as={MdOutlineShoppingCart}
+        as={MdMoney}
         width='20px'
         height='20px'
         color='inherit'
@@ -43,12 +46,26 @@ const routes = [
     secondary: true,
   },
   {
+    name: "Upload",
+    layout: "/admin",
+    path: "/upload",
+    icon: (
+      <Icon
+        as={MdMoney}
+        width='20px'
+        height='20px'
+        color='inherit'
+      />
+    ),
+    component: Upload
+  },
+  /*{
     name: "Data Tables",
     layout: "/admin",
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
     path: "/data-tables",
     component: DataTables,
-  },
+  },*/
   {
     name: "Profile",
     layout: "/admin",
